@@ -1,0 +1,347 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    /* background-color: #f0f0f0; */
+    flex-direction: column;
+}
+
+.container {
+    width: 330px;
+}
+
+h2 {
+    text-align: center;
+    color: #FF6B82;
+    margin-bottom: 20px;
+}
+
+.box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: max-height 0.3s ease;
+    max-height: 150px; /* Collapsed height */
+    overflow: hidden;
+}
+
+.row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* padding: 10px; */
+}
+
+.sectionLabel{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.section#discount {
+    background-color: #FF6B82;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    flex: 0;
+    margin-right: 10px;
+}
+
+.section#offer {
+    background-color: #fff;
+    /* padding: 10px; */
+    /* border-radius: 5px;
+    border: 1px solid #ccc; */
+    flex: 3;
+}
+
+.offer-text {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 6px;
+    cursor: pointer;
+}
+
+
+.offer-text.flex-start {
+    justify-content: flex-start; /* Align to left when expanded */
+}
+
+.offer-container{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.offer-title {
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+}
+
+.offer-price {
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+}
+
+.box h3 {
+    margin: 0;
+}
+
+.content {
+    /* margin-top: 10px; */
+    display: none; /* Hidden initially */
+}
+
+.options {
+    margin: 10px 0;
+}
+
+button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.color-option {
+    background-color: lightgray;
+}
+
+.size-option {
+    background-color: lightblue;
+}
+
+.color-option:hover, .size-option:hover {
+    opacity: 0.8;
+}
+
+/* Hide default radio button */
+/* input[type="radio"] {
+     
+} */
+
+/*Add Color when radio button is checked */
+input[type="radio"] {
+    appearance: none; /* Hide the default radio button */
+    width: 15px;
+    height: 15px;
+    border: 1px solid black; /* Default border color */
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+}
+
+input[type="radio"]:checked {
+    border-color: #FF6B82; /* Change the border color when checked */
+}
+
+input[type="radio"]::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: transparent; /* Start with a transparent background */
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s ease-in-out;
+}
+
+input[type="radio"]:checked::before {
+    background-color: #FF6B82; /* Change the dot color when checked */
+}
+
+/* Sections below the boxes */
+.section-container {
+    width: 330px;
+}
+
+.section-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.section-item {
+    text-align: center;
+}
+
+.section-item:last-child {
+    margin-right: 0;
+}
+
+.add-icon {
+    font-size: 18px;
+    color: #fff;
+    background-color: #FF6B82;
+    border-radius: 50%;
+    width: 20px;
+    height: 30px;
+}
+
+.add-to-cart {
+    background-color: #FF6B82;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 !important;
+}
+
+.powered-by {
+    text-align: center;
+}
+
+.section-item1{
+    color: #FF6B82;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.section-item2{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.section-item3{
+    background-color: #FF6B82;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.extra-text{
+    flex-direction: column;
+    gap: 6px;
+}
+
+.extra-price{
+    color: #9F9F9F;
+    font-size: 12px;
+    text-decoration: line-through
+}
+
+.extra-title{
+    border-radius: 3px;
+    background-color: #FF6B82;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*content which will load after clicking on box*/
+.grid {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 220px;
+    gap: 6px;
+    align-items: center;
+}
+
+.grid-cell {
+    flex: 1;
+    /* padding: 5px; */
+    text-align: center;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.grid-cell h4 {
+    margin-bottom: 5px;
+}
+
+.size-select, .color-select {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.size-select:hover, .color-select:hover {
+    border-color: #FF6B82;
+}
+
+.right-align{
+    text-align: right;
+}
+
+.left-align{
+    text-align: left;
+}
+
+.popular-text{
+    font-size: 12px;
+    font-weight: bold;
+    color: #FF6B82;
+}
+
+/* Basic styling for the select box */
+.custom-select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 10px;
+    background-image: url('./images/Polygon\ 32.svg');
+    /* Base64 encoded arrow SVG */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 9px;
+}
+
+/* Optional: Add some padding to the right so the text doesn't overlap with the arrow */
+.custom-select:focus {
+    outline: none;
+}
+
+
+/*create divider between two divisions*/
+.divider {
+    position: absolute;
+    left: 16%;
+    transform: translateX(-50%);
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 5px;
+    z-index: 1;
+}
+
+.square {
+    width: 6px;
+    height: 10px;
+    border-radius: 15px;
+    background-color: white;
+    margin: 3px 0;
+}
